@@ -13,7 +13,7 @@ var btnListarInvertido = document.querySelector("#btnListarInvertido")
 var RlistaPoductos  = document.querySelector("#RlistaPoductos")
 var RnombreProductos  = document.querySelector("#RnombreProductos")
 var RcodigoProductos  = document.querySelector("#RcodigoProductos")
-var RdescripcionP  = document.querySelector("# RdescripcionP")
+var RdescripcionP  = document.querySelector("#RdescripcionP")
 var RcantidadP  = document.querySelector("#RcantidadP")
 var RcostoP  = document.querySelector("#RcostoP")
 var Rvalor = document.querySelector("#Rvalor")
@@ -80,3 +80,25 @@ class Productos{
         }
     }
 }
+
+btnAgregarP.addEventListener("click", ()=> {
+    let producto = new Producto (nombre.value, CodigoP.value, DescripcionP.value, Number(CantidadP.value), Number(CostoP.value))
+    producto.agruegarProducto(producto)
+    SumaM += producto.costo * producto.cantidad
+})
+btnBorrarP.addEventListener("click", ()=> {
+    let producto = new Producto
+    producto.borrarProducto(CodigoP.value)
+    console.log(vectorP)
+})
+
+btnBuscarP.addEventListener("click", ()=> {
+    listarP.innerHTML = ""
+    RlistaPoductos.innerHTML  = "Productos:"
+    for(let i = 0; vectorP.length; i++){
+        let nuevo = document.createElement("Li")
+        nuevo.textContent = vectorP[i].nombre + "x" + vectorP[i].cantidad
+        listarP.appendChild(nuevo)
+    }
+})
+
