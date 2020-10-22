@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inventario</title>
+</head>
+<body>
+    <h1>Tiendita</h1>
+    <div class = "inputs">
+        <label for="NombreProducto">Nombre</label>
+        <input type="text"  id="NombreProducto">
+        <br>
+        <label for="CodigoP">Codigo</label>
+        <input type="number"  id="CodigoP">
+        <br>
+        <label for="DescripcionP">Descripcion</label>
+        <input type="text"  id="DescripcionP">
+        <br>
+        <label for="CantidadP">Cantidad</label>
+        <input type="number" id="CantidadP">
+        <br>
+        <label for="CostoP">Costo</label>
+        <input type="number"  id="CostoP">
+    </div>
+
+    <div class = "Bontones">
+        <button id= "btnAgregarP">Agruegar</button>
+        <button id= "btnBorrarp">Borrar</button>
+        <button id= "btnBucarP">Buscar</button>
+        <button id= "btnListarP">Listar</button>
+        <button id= "btnListarInvertido">Lista invertida</button>
+        <button id="btnPosicion">Posicion</button>
+    </div>
+    <div class = "Output">
+        <label id= "RlistaPoductos"></label>
+        <ul id="ListaP"></ul>
+        <label id="RnombreProductos"></label>
+        <br>
+        <label id="RcodigoProductos"></label>
+        <br>
+        <label id="RdescripcionP"></label>
+        <br>
+        <label id="RcantidadP"></label>
+        <br>
+        <label id="RcostoP"></label>
+        <br>
+        <label id="Rvalor"></label>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
