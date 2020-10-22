@@ -9,6 +9,7 @@ var btnBorrarP = document.querySelector("#btnBorrarP")
 var btnBuscarP = document.querySelector("#btnBuscarP")
 var btnListarP = document.querySelector("#btnListarP")
 var btnListarInvertido = document.querySelector("#btnListarInvertido")
+var btnPosicion = document.querySelector("btnPosicion")
 
 var RlistaPoductos  = document.querySelector("#RlistaPoductos")
 var RnombreProductos  = document.querySelector("#RnombreProductos")
@@ -102,3 +103,18 @@ btnBuscarP.addEventListener("click", ()=> {
     }
 })
 
+btnListarP.addEventListener("click", ()=> {
+    listarP.innerHTML = ""
+    RlistaPoductos.innerHTML = "Productos:"
+    for(let i = vectorP.length -1 ; i >= 0; i--){
+        let nuevo = document.createElement("Li")
+        nuevo.textContent = vectorP[i].nombre + "x" + vectorP[i].cantidad
+        listarP.appendChild(nuevo)
+    }
+})
+
+btnPosicion.addEventListener("click", ()=> {
+    let producto = new Producto(NombreProducto.value, CodigoP.value, DescripcionP.value, Number(CantidadP.value), Number(costoP.value))
+    producto.agruegarProductoPosicion(Number(agruegarProducto.value), producto)
+    console.log(vectorP)
+})
